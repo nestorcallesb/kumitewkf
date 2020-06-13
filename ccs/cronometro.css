@@ -1,6 +1,6 @@
 
 		.body {
-			background: url( Logo-Transparencia-Uchiague.png );
+			background-image: url( ../imagenes/Logo-Transparencia-Uchiague.png );
 			background-position: center center;
 		}
 		.bordes {

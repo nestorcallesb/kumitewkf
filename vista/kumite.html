@@ -1,0 +1,155 @@
+<div class="container body">
+
+		<div class="row">
+			<img src="Encabezado-Karate.png" class="img-fluid justify-content-center p-auto m-auto" alt="Responsive image" >
+		</div>
+		<div class="row p-4  ">
+			<div class="col bordes panel">
+				Cronometro Kumite - Reglamento WKF 2020
+			</div>
+		</div>
+		<hr>
+		<!-- SECCION CONTROL DEL TIEMPO-->
+		<div class="row align-items-center justify-content-center" box-sizing="border-box">
+			<div class="col-2 bordes ">
+				<button id="btn-sustmin" class="grp-btn btn btn-outline-warning btn-block botones-ctrl float-right">- min</button>
+			</div>
+			<div class="col bordes bg-dark p-1 mr-auto" >
+				<h3><div id="minute" class="col d-inline text-white display-n" >03</div></h3>
+			</div>
+			<div class="col-1 bordes bg-dark center-block p-3">
+				<div class="divider col d-inline text-white display-n ">:</div>
+			</div>
+			<div class="col bordes bg-dark p-1 ml-auto">
+				<h3><div id="second" class="col d-inline text-white display-n" >00</div><h3>
+				</div>			
+				<div class="col-2 bordes">
+					<button id="btn-addmin" class="grp-btn btn btn-outline-info btn-block botones-ctrl float-left">+ min</button>
+				</div>
+			</div>
+			<!-- SECCION CONTROL DEL TIEMPO -->
+			<div class="row align-items-center justify-content-center">
+				<div class="col-2 bordes">
+					<button id="btn-sustseg" class="grp-btn btn btn-outline-warning btn-block botones-ctrl float-right">- seg</button>
+				</div>
+
+				<div class="col bordes align-items-botton">
+					<button id="btn-comenzar" class="btn btn-success btn-lg btn-block display-b">Comenzar</button>
+				</div>
+				<div class="col bordes">
+					<button id="btn-reset" class="btn grp-btn btn-danger btn-lg btn-block display-b">Reset</button>
+				</div>			
+				<div class="col-2 bordes">
+					<button id="btn-addseg" class="grp-btn btn btn-outline-info btn-block botones-ctrl float-left">+ seg</button>
+				</div>
+			</div>
+
+			<!-- SECCION CONTROL DE PUNTUACION -->
+			<div class="row">
+				<div class="col bordes bg-dark center-block d-inline text-white display-n pto-ao">
+					<div>AO: 00</div>
+				</div>
+				<div class="col bordes bg-dark center-block d-inline text-white display-n pto-aka">
+					<div>AKA: 00</div>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col ao yuko">
+					<button id="ao yuko" class="btn btn-info btn-lg btn-block display-b puntuacion" value="01">Y</button>
+				</div>
+				<div class="col ao wasa-ari">
+					<button id="ao wasa-ari" class="btn btn-secondary btn-lg btn-block display-b puntuacion" value="02">W</button>
+				</div>
+				<div class="col ao ippon">
+					<button id="ao ippon" class="btn btn-dark btn-lg btn-block display-b puntuacion" value="03">I</button>
+				</div>
+				<div class="col ao puntuacion">
+					<button id="ao deshacer" class="btn btn-outline-dark btn-lg btn-block display-b puntuacion">&larr;</button>
+				</div>
+				<div class="col aka yuko">
+					<button id="aka yuko" class="btn btn-info btn-lg btn-block display-b puntuacion" value="01">Y</button>
+				</div>
+				<div class="col aka wasa-ari">
+					<button id="aka wasa-ari" class="btn btn-secondary btn-lg btn-block display-b puntuacion" value="02">W</button>
+				</div>
+				<div class="col aka ippon puntuacion">
+					<button id="aka ippon" class="btn btn-dark btn-lg btn-block display-b puntuacion" value="03">I</button>
+				</div>
+				<div class="col aka">
+					<button id="aka deshacer" class="btn btn-outline-dark btn-lg btn-block display-b puntuacion">&larr;</button>
+				</div>
+			</div>			
+			<!-- SECCION SANCIONES Y AMONESTACIONES-->
+			<div class="row">
+				<div class="col bordes ao">CATEGORIA 1:
+					<div class="btn-group" >
+						<select class="custom-select evento" id="Categoria 1 AO">
+							<option> - Categoria 1 - </option>
+							<option> CHUKOKU </option>
+							<option> KEIKOKU </option>
+							<option> HANSOKU-CHUI </option>
+							<option> HANSOKU </option>
+						</select>
+					</div>
+				</div>
+				<div class="col bordes aka">CATEGORIA 1:
+					<div class="btn-group " >
+						<select class="custom-select evento" id="Categoria 1 AKA">
+							<option> - Categoria 1 - </option>
+							<option> CHUKOKU </option>
+							<option> KEIKOKU </option>
+							<option> HANSOKU-CHUI </option>
+							<option> HANSOKU </option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row" >
+				<div class="col bordes ao">CATEGORIA 2:
+					<div class="btn-group btn-md" >
+						<select class="custom-select evento" id="Categoria 2 AO">
+							<option> - Categoria 2 - </option>
+							<option> CHUKOKU </option>
+							<option> KEIKOKU </option>
+							<option> HANSOKU-CHUI </option>
+							<option> HANSOKU </option>
+						</select>
+					</div>
+				</div>
+				<div class="col bordes aka">CATEGORIA 2:
+					<div class="btn-group" >
+						<select class="custom-select evento" id="Categoria 2 AKA">
+							<option> - Categoria 2 - </option>
+							<option> CHUKOKU </option>
+							<option> KEIKOKU </option>
+							<option> HANSOKU-CHUI </option>
+							<option> HANSOKU </option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row row-cols-4 ">
+				<div class="col bordes ao">
+					<button id="ao Kiken" class="btn btn-warning btn-lg btn-block display-b p-1 puntuacion">Kiken AO</button>
+				</div>
+				<div class="col bordes ao">
+					<button id="ao Shikkaku" class="btn btn-danger btn-lg btn-block display-b p-1 puntuacion">Shikkaku AO</button>
+				</div>
+				<div class="col bordes aka">
+					<button id="aka Kiken" class="btn btn-warning btn-lg btn-block display-b p-1 puntuacion">Kiken AKA</button>
+				</div>			
+				<div class="col bordes aka">
+					<button id="aka Shikkaku" class="btn btn-danger btn-lg btn-block display-b p-1 puntuacion">Shikkaku AKA</button>
+				</div>
+			</div>
+
+			<hr>
+			<div class="card" >
+				<div class="card-body" >
+					<div class="cuerpo categoria">
+
+					</div>
+				</div>
+
+			</div>
+		</div>

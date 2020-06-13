@@ -1,0 +1,40 @@
+		@media  (max-width: 768px){
+			.panel {
+				background: #092b98;
+				color: #fff;
+				justify-content: flex-start;
+				font-size:1em;
+			}
+			.botones-ctrl {
+				vertical-align: middle;
+				text-align: center;
+				font-size:0.7em;
+			}
+			.aka {
+				vertical-align: middle;
+				text-align: center;
+				font-size:0.70em;
+				font-weight:bold;
+			}			
+			.ao {
+				background: #3F7FBF;
+				vertical-align: middle;
+				text-align: center;
+				font-size:0.70em;
+				font-weight:bold;
+			}		
+			.display-b {
+				vertical-align: middle;
+				text-align: center;
+				font-size: 1em;
+			}		
+			.display-n {
+				vertical-align: middle;
+				text-align: center;
+				font-size: 1.5em;
+			}
+			.categoria {
+				width: auto;
+				font-size: 0.8em;
+			}
+		}

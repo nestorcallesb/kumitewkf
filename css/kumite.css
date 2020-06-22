@@ -1,0 +1,155 @@
+	.cuerpo {
+		background: url( ../imagenes/Logo-Transparencia-Uchiague.png );
+		background-position: center center;
+	}
+
+	.btn-ctrl {
+		vertical-align: middle;
+		text-align: center;
+		margin: 0.1px 0.1px;
+		padding: 0;
+	}
+
+	.bordes {
+		border: 0px #000 solid;
+		vertical-align: middle;
+		text-align: center;
+		margin: 0.1px 0.1px;
+		padding: 0;		
+	}
+
+	.fuente {
+		color: #fff;
+		vertical-align: middle;
+		text-align: center;
+		font-weight:bold;
+		font-family:'Consola, Helvetica, Arial';
+		font-size: 2.5em;
+		box-sizing: border-box;
+	}
+	.fuente-btn {
+		color: #fff;
+		vertical-align: middle;
+		text-align: center;
+		font-weight:bold;
+		font-family:'Consola, Helvetica, Arial';
+		font-size: 3em;
+		box-sizing: border-box;
+	}
+	
+	.counter {
+		border: 0px #000 solid;
+		background: #3B3434;
+		margin: 0;
+		padding: 0;
+		font-family:'Consola, Helvetica, Arial';
+	}
+
+	.letra {
+		color: #fff;
+		vertical-align: middle;
+		text-align: center;
+		align-content: center;
+		font-weight:bold;
+		font-family:'Helvetica';
+	}
+	
+	.aka {
+		background-color:rgba(255,0,0,0.4);
+	}
+
+	.ao {
+		background-color:rgba(0,0,255,0.4);
+	}
+
+/*
+	proporciones escalables o adaptativas
+		em (Ems):  Un em es igual al tamaño de fuente actual. 
+		Siempre nos proporciona valores relativos al font-size del elemento	; 
+		rem (REm):  Un rem es igual al tamaño de fuente del elemento RAIZ. un rem siempre sera igual a 16px 
+		font-size: calc(1em + 1vw) ; Formula para cambiar tamaño de la letra de forma Responsive
+		Aplica  em para propiedades que cambian con el font-size del elemento.
+		Aplica  rem para todo lo demás.
+	 unidades de longitud relativas a la pantalla de visualización
+		vw: el valor vw indica la proporcionalidad de un estilo escalable como font-size 
+		o cualquier otro valor como  padding o height con respecto a la pantalla donde se va a visualizar;
+	ICONOS
+<i class="fas fa-plus-square"></i>
+<i class="far fa-plus-square"></i>
+<i class="fas fa-minus-square"></i>
+<i class="far fa-minus-square"></i>
+<i class="fas fa-torii-gate"></i>
+<i class="far fa-play-circle"></i>	Comenzar
+<i class="far fa-pause-circle"></i>	Pausa
+<i class="far fa-stop-circle"></i>	Detener
+<i class="fas fa-power-off"></i>	Reiniciar
+<i class="fas fa-trophy"></i>	Ganador
+<i class="far fa-window-close"></i>	Perdedor
+<i class="far fa-flag"></i>	Perdedor
+<i class="fas fa-check"></i>	Check
+
+IPPON -> 	</i><i class="fas fa-circle"></i><i class="fas fa-minus"></i><i class="far fa-circle"></i>
+WASA-ARI ->	<i class="far fa-circle"></i><i class="fas fa-minus"></i></i><i class="far fa-circle"></i>
+YUKO ->		</i><i class="fas fa-minus"></i>
+
+*/
+
+		.titulo {
+			background: #801010;
+			opacity:0.5;
+			font-size: 2.5em;
+		}
+
+		/* // aplicara las conf cuando las dimensiones de largo sean menor a 992px */
+		@media (max-width: 992px){ 
+			.titulo {
+				background: #108010;
+				font-size: 2em;
+			}
+		}
+		/*	// aplicara las conf cuando las dimensiones de largo sean menor a 768px */
+		@media  (max-width: 768px){ 
+			.titulo {
+				background: #101080;
+				font-size: 1.5em;
+			}
+			.fuente {
+				font-size: 2em;
+			}
+		}
+		/*	// aplicara las conf cuando las dimensiones de largo sean menor a 576px */
+		@media  (max-width: 576px){ 
+			.titulo {
+				background: #101010;
+				font-size: 1.2em;
+			}
+			.fuente {
+				font-size: 1.6em;
+				padding: 1px, 1px;
+			}
+			.fuente-btn {
+				margin: 0;
+				padding: 0;
+			}
+			.btn-ctrl {
+				font-size: 1em;
+				padding: 0;
+				margin: 0;
+			}
+		}
+		/*	// aplicara las conf cuando las dimensiones de largo sean menor a 320px  */
+		@media  (max-width: 320px){ 
+			.titulo {
+				background: #808080;
+				font-size: 1em;
+			}
+			.fuente {
+				font-size: 1em;
+				padding: 0;
+			}
+			.btn-contenedor {
+				border: 1px #000 solid;
+			}
+		}
+
+		

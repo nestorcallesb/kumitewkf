@@ -1,35 +1,253 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Cronometro Kumite - Reglamento WKF 2020 </title>
-	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Control Kumite WKF 2020</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no shrink-to-fit=no">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<!-- Alertify CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<!-- Alertify Bootstrap CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- Popper JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<!-- Codigo CCS para la pagina-->
-	<link rel="stylesheet" href="./ccs/cronometro.css">
-	<link rel="stylesheet" media="(max-width: 992px)" href="./ccs/cronometro-992px.css">
-	<link rel="stylesheet" media="(max-width: 768px)" href="./ccs/cronometro-768px.css">
-	<link rel="stylesheet" media="(max-width: 576px)" href="./ccs/cronometro-576px.css">
-	<link rel="stylesheet" media="(max-width: 320px)" href="./ccs/cronometro-320px.css">	
-
+	<!-- JavaScript Alertify -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	<!-- FontAwesome (iconos para botones)-->
+	<link href="./css-fa/all.css" rel="stylesheet">
+	<script type="text/javascript" src="./js/kumite.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/kumite.css">
 </head>
 <body>
-	<div id="kumite"></div>	
-</body>
-<footer>
-	<script type="text/javascript">
-			
-			$(document).ready(function(){
-				$('#kumite').load('./vista/kumite.html');
-			});
+	<div id="principal" class="container cuerpo">
+		<div id="cabecera">
+			<div class="row ">
+				<img src="./imagenes/Encabezado-Karate.png" class="img-fluid justify-content-center p-auto m-auto" alt="Responsive image" />
+			</div>
 
-	</script>
-	
-</footer>
+			<div class="row letra titulo align-items-center"> Cronometro Kumite - Reglamento WKF 2020 </div>
+			<div class="d-none d-sm-block"><hr></div>
+
+			<!--	SECCION N°1: Seccion de Categorias	-->
+			
+			<div class="row align-items-left">
+				<div class="col-3">
+					<select class="custom-select " id="categoria" >
+						<option> - Categoria - </option>
+						<option >Junior</option>
+						<option >Cadete</option>
+						<option >Sub-21</option>
+						<option >Senior</option>
+						<option >Libre</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="d-none d-sm-block"><hr></div>
+			<!--	SECCION N°2: Control del Tiempo	-->
+			
+			<div class="row row-cols-3 row-cols-sm-5 align-items-center m-auto mb-sm-3" >
+
+				<div class="col-12 col-sm-2 btn-contenedor">
+					<button  class="grp-btn btn btn-outline-info btn-block btn-ctrl float-center tiempo" id="-min">
+						<i class="fas fa-minus-square">min</i>
+					</button>
+					<button class="grp-btn btn btn-outline-info btn-block btn-ctrl float-center tiempo" id="-seg">
+						<i class="far fa-minus-square">seg</i>
+					</button>
+				</div>
+
+				<div class="col-sm-3 counter fuente " id="minute">00</div>
+				<div class="col-sm-2 counter fuente ">:</div>
+				<div class="col-sm-3 counter fuente " id="second">00</div>
+
+				<div class="col-12 col-sm-2 btn-contenedor">
+					<button class="grp-btn btn btn-outline-success btn-block btn-ctrl float-center tiempo" id="+min">
+						<i class="fas fa-plus-square">min</i>
+					</button>
+					<button class="grp-btn btn btn-outline-success btn-block btn-ctrl float-center tiempo" id="+seg">
+						<i class="far fa-plus-square">seg</i>
+					</button>
+				</div>
+			</div>
+			<div class="row row-cols-2 align-items-center m-auto mb-3">
+				<div class="col col-12 col-sm-6 ">
+					<button class="btn btn-success btn-block btn-ctrl fuente" value="Comenzar" id="START">
+						<i class="far fa-play-circle ">Comenzar</i>
+					</button>
+				</div>
+				<div class="col col-12 col-sm-6 ">
+					<button class="grp-btn btn btn-danger btn-block btn-ctrl fuente" value="Reset" id="RESET">
+						<i class="far fa-stop-circle ">Reset</i>
+					</button>
+				</div>
+			</div>
+
+			<div class="d-none d-sm-block"><hr></div>
+			
+			<!--	SECCION N°3: Puntuacion	-->			
+
+			<div class="row row-cols-2 align-items-center mx-auto" >
+				<div class="col ao align-items-center"> 
+					<button class=" btn btn-primary grp-btn float-center senshu " id="AO-SENSHU" data-toggle="tooltip" title="AO-SENSHU"><i class="fas fa-check"></i></button>
+				</div>
+				<div class="col aka align-items-center mx-auto">
+					<button class=" btn btn-danger grp-btn float-center senshu " id="AKA-SENSHU" data-toggle="tooltip" title="AKA-SENSHU"><i class="fas fa-check"></i></button>
+				</div>
+
+			</div>			
+			<div class="row row-cols-4 align-items-center m-auto">
+				<div class="col ao fuente ">AO</div>
+				<div class="col counter fuente " id="AO-PTN">00</div>
+				<div class="col aka fuente ">AKA</div>
+				<div class="col counter fuente " id="AKA-PTN">00</div>				
+			</div>
+
+			<div class="row row-cols-2 row-cols-sm-8 align-items-center justify-content-sm-center m-sm-auto">
+				<div class="col col-sm ao fuente-btn order-sm-1 p-0 m-0">
+					<button class="btn btn-success btn-lg p-0 m-0 puntos" id="AO-YUKO" value="1" data-toggle="tooltip" title="AO-YUKO">
+					</i><i class="far fa-circle"></i>
+				</button>
+			</div>				
+			<div class="col col-sm aka fuente-btn order-sm-2 p-0 m-0">
+				<button class="btn btn-success btn-lg p-0 m-0 puntos" id="AKA-YUKO" value="1" data-toggle="tooltip" title="AKA-YUKO">
+					<i class="far fa-circle"></i>
+				</button>
+			</div>
+			<div class="col col-sm ao fuente-btn  order-sm-1 p-0 m-0">
+				<button class="btn btn-secondary p-0 m-0 puntos" id="AO-WASA-ARI" value="2" data-toggle="tooltip" title="AO-WASA-ARI">
+					<i class="far fa-circle"></i>
+					<i class="fas fa-minus"></i>
+					<i class="far fa-circle"></i>
+				</button>
+			</div>
+			<div class="col col-sm aka fuente-btn order-sm-2 p-0 m-0">
+				<button class="btn btn-secondary p-0 m-0 puntos" id="AKA-WASA-ARI" value="2" data-toggle="tooltip" title="AKA-WASA-ARI">
+					<i class="far fa-circle"></i>
+					<i class="fas fa-minus"></i>
+					<i class="far fa-circle"></i>
+				</button>
+			</div>
+			<div class="col col-sm ao fuente-btn order-sm-1 p-0 m-0">
+				<button class="btn btn-dark p-0 m-0 puntos" id="AO-IPPON" value="3" data-toggle="tooltip" title="AO-IPPON">
+					<i class="fas fa-circle"></i>
+					<i class="fas fa-minus"></i>
+					<i class="far fa-circle"></i>
+				</button>
+			</div>				
+			<div class="col col-sm aka fuente-btn order-sm-2 p-0 m-0">
+				<button class="btn btn-dark p-0 m-0 puntos" id="AKA-IPPON" value="3" data-toggle="tooltip" title="AKA-IPPON">
+					<i class="fas fa-circle"></i>
+					<i class="fas fa-minus"></i>
+					<i class="far fa-circle"></i>
+				</button>
+			</div>
+			<div class="col col-sm ao fuente-btn order-sm-1 m-0">
+				<button class="btn btn-danger m-0 puntos undo" id="AO-UNDO" value="0" data-toggle="tooltip" title="AO-UNDO">
+					<i class="fas fa-undo"></i>
+				</button>
+			</div>
+			<div class="col col-sm aka fuente-btn order-sm-2 m-0">
+				<button class="btn btn-danger m-0 puntos undo" id="AKA-UNDO" value="0" data-toggle="tooltip" title="AKA-UNDO">
+					<i class="fas fa-undo"></i>
+				</button>
+			</div>
+		</div>
+		<div class="d-none d-sm-block"><hr></div>
+
+		<!--	SECCION N°4: Control de Amonestaciones	-->
+
+		<div class="row row-cols-2 align-items-center m-auto">
+			<div class="col ao fuente order-sm-1">
+				<select class="custom-select amonestacion" id="C1_AO">
+					<option> - Categoria 1 - </option>
+					<option value="1"> CHUKOKU </option>
+					<option value="2"> KEIKOKU </option>
+					<option value="3"> HANSOKU-CHUI </option>
+					<option value="4"> HANSOKU </option>
+				</select>
+			</div>
+			<div class="col aka fuente order-sm-1">
+				<select class="custom-select amonestacion" id="C1_AKA">
+					<option> - Categoria 1 - </option>
+					<option value="1"> CHUKOKU </option>
+					<option value="2"> KEIKOKU </option>
+					<option value="3"> HANSOKU-CHUI </option>
+					<option value="4"> HANSOKU </option>
+				</select>
+			</div>
+			<div class="col ao fuente order-sm-2">
+				<select class="custom-select amonestacion" id="C2_AO">
+					<option> - Categoria 2 - </option>
+					<option value="1"> CHUKOKU </option>
+					<option value="2"> KEIKOKU </option>
+					<option value="3"> HANSOKU-CHUI </option>
+					<option value="4"> HANSOKU </option>
+				</select>
+			</div>				
+			<div class="col aka fuente order-sm-2">
+				<select class="custom-select amonestacion" id="C2_AKA">
+					<option> - Categoria 2 - </option>
+					<option value="1"> CHUKOKU </option>
+					<option value="2"> KEIKOKU </option>
+					<option value="3"> HANSOKU-CHUI </option>
+					<option value="4"> HANSOKU </option>
+				</select>
+			</div>
+		</div>
+		<div class="d-none d-sm-block"><hr></div>
+	</div>
+	<!--	SECCION N°5: Sanciones	-->
+
+	<div class="row row-cols-2 row-cols-sm-4 align-items-center m-auto">
+		<div class="col ao fuente order-sm-1 clearfix">
+			<button class="btn btn-warning descalificacion" id="kiken" data-toggle="tooltip" title="AO-KIKEN" value="AO-KIKEN">	
+				<i class="far far fa-flag">KK</i>	
+			</button>
+		</div>
+		<div class="col aka fuente order-sm-2 clearfix">
+			<button class="btn btn-warning descalificacion" id="kiken" data-toggle="tooltip" title="AKA-KIKEN" value="AKA-KIKEN">	
+				<i class="far far fa-flag">KK</i>	
+			</button>
+		</div>
+		<div class="col ao fuente order-sm-1 clearfix">
+			<button class="btn btn-danger descalificacion" id="shikkaku" data-toggle="tooltip" title="AO-SHIKKAKU" value="AO-SHIKKAKU">	
+				<i class="far fa-flag">S</i>
+			</button>
+		</div>
+		<div class="col aka fuente order-sm-2 clearfix">
+			<button class="btn btn-danger descalificacion" id="shikkaku" data-toggle="tooltip" title="AKA-SHIKKAKU" value="AKA-SHIKKAKU">	
+				<i class="far fa-flag">S</i>
+			</button>
+		</div>
+	</div>
+
+	<div class="d-none d-sm-block"><hr></div>
+	<!--	SECCION N°6: Fin del Combate y Reset	-->
+	<div class="row row-cols-1 align-items-center m-auto mb-3">
+		<div class="col ">
+			<button class="grp-btn btn btn-primary btn-block btn-ctrl  fuente" id="YAME">
+				<i class="fas fa-trophy">
+					Fin del Combate 
+				</i>
+			</button>
+		</div>
+	</div>
+	<div class="d-none d-sm-block"><hr></div>
+	<!--	SECCION N°7: Consola de registro de eventos	-->
+	<div class="card">
+		<div class="card-body">
+			<div class="cuerpo" id="consola">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+
 </html>
